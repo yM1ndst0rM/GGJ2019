@@ -9,7 +9,7 @@ public class LifeForceController : MonoBehaviour
     public float StartLifeForce = 10;
     public float LifeForceDepletionPerSecond = -1;
     public float LifeForceRestorationPerSecond = 1;
-    public float LifeForce { get; private set; }
+    public float LifeForce;
     public bool IsRestoringLifeForce;
     public UnityEvent OnDeath;
 
