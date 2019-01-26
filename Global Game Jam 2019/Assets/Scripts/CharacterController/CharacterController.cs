@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    public enum InputType { mouse, controller };
-    public InputType inputType;
+    
+    public GameController.InputType inputType;
 
 
     public float speed;
@@ -22,6 +22,8 @@ public class CharacterController : MonoBehaviour
     float moveVertical;
     float rotateHorizontal;
     float rotateVertical;
+
+    GameController gameController;
     
 
     // Start is called before the first frame update
@@ -29,6 +31,8 @@ public class CharacterController : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
+        gameController = FindObjectOfType<GameController>();
+        inputType = gameController.GetControlls();
     }
 
     // Update is called once per frame
@@ -65,10 +69,10 @@ public class CharacterController : MonoBehaviour
         {
             switch (inputType)
             {
-                case InputType.controller:
+                case GameController.InputType.controller:
                     HandleControllerRotation();
                     break;
-                case InputType.mouse:
+                case GameController.InputType.mouse:
                     HandleMouseRotation();
                     break;
             }
