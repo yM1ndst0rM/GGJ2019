@@ -21,12 +21,37 @@ MonoBehaviour:
   - {fileID: 114772093153605132}
   - {fileID: 114466274091640424}
   - {fileID: 114042166094584608}
+  - {fileID: 114019306456808876}
   MasterBanks:
   - {fileID: 114059220800801920}
   StringsBanks:
   - {fileID: 114933825039235310}
-  stringsBankWriteTime: 636841331340000000
+  stringsBankWriteTime: 636841367540000000
   cacheVersion: 3
+--- !u!114 &114019306456808876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Main_Theme
+  guid: befb74c19ac1904fa0993f912b6a1cdf
+  Banks:
+  - {fileID: 114059220800801920}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114285701574320140}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 136698
 --- !u!114 &114042166094584608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,12 +89,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: E:\GGJ2019\Global Game Jam 2019\Assets\FMOD Plugins\GGJ-2019\Build\Desktop\Master
     Bank.bank
-  lastModified: 636841331340000000
+  lastModified: 636841367540000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 3254272
+    Value: 5002336
   Exists: 1
+--- !u!114 &114285701574320140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Theme
+  Min: 0
+  Max: 5
+  Default: 0
 --- !u!114 &114340041673947738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,11 +275,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\FMOD Plugins\GGJ-2019\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636841331340000000
+  lastModified: 636841367540000000
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 920
+    Value: 960
   Exists: 1
 --- !u!114 &114984601009711394
 MonoBehaviour:
