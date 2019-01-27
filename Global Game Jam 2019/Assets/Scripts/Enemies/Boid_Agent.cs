@@ -15,31 +15,35 @@ public class Boid_Agent : MonoBehaviour
     public  float      cohesionWeight      = 1f;
     private Vector3    alignment           = Vector3.zero;
     public  float      alignmentWeight     = 1f;
-
     private Vector3    chase               = Vector3.zero;
     public  float      chaseWeight         = 1f;
-
     private Vector3    runaway             = Vector3.zero;
     public  float      runawayWeight       = 1f;
-
 
     private Vector3    resultingForce      = Vector3.zero;
     private Vector3    currentVelocity     = Vector3.zero;
     public float       maximumForce        = 1;
     public float       runawayForce        = 5;
     private Vector2Int currentGridIdx      = Vector2Int.zero;
-
     public LifeForceController lfc;
     public float dps                       = 0.005f;
     public float rotationSpeed             = 10.00f;
-    public bool runningAway                = false;
+    private bool runningAway               = false;
+    public  int gridInfluence              = 3;
 
+    List<Boid_Agent> currentNeighbours;
     private EnemyAnimationController eac;
+
+    public  int updateDelay = 30;
+    private int updatecc    = 0;
 
     void Awake()
     {
-        lfc    = GameObject.FindObjectOfType<LifeForceController>();
-        eac    = GetComponent<EnemyAnimationController>();
+        lfc      = GameObject.FindObjectOfType<LifeForceController>();
+        eac      = GetComponent<EnemyAnimationController>();
+        updatecc = Random.Range(0, updateDelay);
+
+        currentNeighbours = new List<Boid_Agent>();
     }
     
     
@@ -69,6 +73,32 @@ public class Boid_Agent : MonoBehaviour
         return currentGridIdx;
     }
 
+    void updateNeighbours()
+    {
+        
+        if(updatecc == 0)
+        {
+            currentNeighbours.Clear();
+            int x,y;
+
+            for(int i = -gridInfluence; i <= gridInfluence; i++)
+                {
+                    for(int j = -gridInfluence; j <= gridInfluence; j++)
+                    {
+                        y = currentGridIdx.y + i;
+                        x = currentGridIdx.x + j;
+                        
+                        x = Mathf.Clamp(x, 0, manager.getGridResolution() - 1);
+                        y = Mathf.Clamp(y, 0, manager.getGridResolution() - 1);
+                        currentNeighbours.AddRange(manager.boid_Grid[x, y]);
+                    }
+                }
+                updatecc = updateDelay;
+        }
+
+        updatecc--;
+    }
+
     void updateBehaviourVectors()
     {
         Vector3 aggregatedAvoidance = Vector3.zero;
@@ -77,29 +107,8 @@ public class Boid_Agent : MonoBehaviour
         runaway                     = Vector3.zero;
 
         Vector3 tempVec;
-        int neighbourCount = 0;
-
-        currentGridIdx = manager.sortBoidIntoGrid(this);
-        int x = currentGridIdx.x;
-        int y = currentGridIdx.y;
-
-        List<Boid_Agent> currentNeighbours = new List<Boid_Agent>();
-        currentNeighbours.AddRange(manager.boid_Grid[x, y]);
-
-        for(int i = -1; i <= 1; i++)
-        {
-            y = currentGridIdx.y + i;
-            x = currentGridIdx.x + Random.Range(-1, 0);
-
-            x = Mathf.Clamp(x, 0, manager.getGridResolution() - 1);
-            y = Mathf.Clamp(y, 0, manager.getGridResolution() - 1);
-            currentNeighbours.AddRange(manager.boid_Grid[x, y]);
-        }
-
+        int neighbourCount = 0;    
         
-        
-
-
         foreach (Boid_Agent boid in currentNeighbours)
         {
             if (boid != this)
@@ -160,6 +169,7 @@ public class Boid_Agent : MonoBehaviour
     void Update()
     {
         currentGridIdx = manager.sortBoidIntoGrid(this);
+        updateNeighbours();
         updateBehaviourVectors();
         constrainForcesUpAxis();
         updateResultingForce();
