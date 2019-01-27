@@ -5,13 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 5f469469705c4994ab8b0f993bf162db
   - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: a37992ba7db83ea478c67dc8d0c7d981
+  - enabled: 1
+    path: Assets/Scenes/With the Streets.unity
+    guid: 2298182bfdcf9cb44a49bf772b3c769d
+  - enabled: 1
+    path: Assets/Scenes/Gameplay Elements.unity
+    guid: 2850d46149894b7458f6cfa0e3dc3d3b
+  - enabled: 1
+    path: Assets/Scenes/AudioScene.unity
+    guid: f903c00f2143ac849a716f53aefd3adb
+  - enabled: 1
+    path: Assets/Scenes/BIG FAT GAME SCENE.unity
+    guid: 9696edc7c2d00a34f95c4f5473de3ac8
+  - enabled: 0
     path: Assets/Scenes/Character_Controller_Scene.unity
     guid: 181fc914585bf5041a294033c326455d
   m_configObjects: {}
