@@ -13,10 +13,12 @@ public class CharacterController : MonoBehaviour
     Rigidbody playerRigidbody;
     public bool canMove = true;
     float moveMagnitude;
+    float strafeAmount;
     Vector3 camForward;
     bool strafing;
     Quaternion mouseRotation;
     Animator anim;
+    int forward = 1;
 
     float moveHorizontal;
     float moveVertical;
@@ -41,17 +43,18 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        strafing = Input.GetButton("Aiming");
-        Debug.Log(rotateVertical);
+        strafing = Input.GetButton("Aiming");        
+
+        if (canMove)
+            Move();
+
+        SetAnimation();
 
     }
 
     private void FixedUpdate()
     {
-        if (canMove)
-            Move();
-
-        SetAnimation();
+        
        
 
     }
@@ -68,6 +71,7 @@ public class CharacterController : MonoBehaviour
         //camForward = Vector3.Scale(camera.forward, new Vector3(1, 0, 1)).normalized;
 
         moveMagnitude = Mathf.Clamp01(new Vector2(moveHorizontal, moveVertical).magnitude);       
+      
 
         if (strafing)
         {
@@ -80,10 +84,13 @@ public class CharacterController : MonoBehaviour
                     HandleMouseRotation();
                     break;
             }
+
+
+
         }
         else
         {
-            
+            forward = 1;
             playerDirection = Vector3.right * moveHorizontal + Vector3.forward * moveVertical;
             if (playerDirection.sqrMagnitude > 0.0f)
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(playerDirection, Vector3.up), 0.1f);
@@ -96,6 +103,8 @@ public class CharacterController : MonoBehaviour
         playerRigidbody.velocity = moveVelocity;
     }
 
+
+    //Handle Strafe Movements With Controller
     void HandleControllerRotation()
     {
         playerDirection = Vector3.right * rotateHorizontal + Vector3.forward * rotateVertical;
@@ -106,6 +115,8 @@ public class CharacterController : MonoBehaviour
         }
     }
 
+
+    //Handle Strafe Movements With Mouse
     void HandleMouseRotation()
     {
         Vector3 mousePos = new Vector3(0, 0, 0);
@@ -131,6 +142,12 @@ public class CharacterController : MonoBehaviour
 
     void SetAnimation()
     {
-        anim.SetFloat("Forward", moveMagnitude);
+        Vector3 moveDirWorld = new Vector3(moveHorizontal, 0, moveVertical);
+        float animV = Vector3.Dot( transform.forward, moveDirWorld);
+        float animH = Vector3.Dot( transform.right, moveDirWorld);
+        
+
+        anim.SetFloat("Forward", animV);
+        anim.SetFloat("Sidewards", animH);
     }
 }

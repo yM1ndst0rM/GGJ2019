@@ -387,6 +387,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 91428326, guid: eae0ec1126a4f174c93e2ddbc8e66fd2, type: 3}
       propertyPath: inputType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 91428323, guid: eae0ec1126a4f174c93e2ddbc8e66fd2, type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 91428325, guid: eae0ec1126a4f174c93e2ddbc8e66fd2, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
