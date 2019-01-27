@@ -18,6 +18,7 @@ public class CharacterDeath : MonoBehaviour
 
     public void InitiateDeath()
     {
+        GetComponent<CharacterAudio>().PlayerDieSound();
         Instantiate(particleSystem, transform.position, transform.rotation);
         Destroy(this.gameObject);
     }
