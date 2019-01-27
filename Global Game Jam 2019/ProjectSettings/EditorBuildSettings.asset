@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5f469469705c4994ab8b0f993bf162db
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
+    path: Assets/Scenes/WinScene.unity
     guid: a37992ba7db83ea478c67dc8d0c7d981
   - enabled: 1
     path: Assets/Scenes/With the Streets.unity
