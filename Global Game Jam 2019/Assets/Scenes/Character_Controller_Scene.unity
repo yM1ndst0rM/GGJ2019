@@ -384,29 +384,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 91428326, guid: eae0ec1126a4f174c93e2ddbc8e66fd2, type: 3}
-      propertyPath: inputType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 91428323, guid: eae0ec1126a4f174c93e2ddbc8e66fd2, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
-    - target: {fileID: 91428323, guid: eae0ec1126a4f174c93e2ddbc8e66fd2, type: 3}
-      propertyPath: m_Mass
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 91428323, guid: eae0ec1126a4f174c93e2ddbc8e66fd2, type: 3}
-      propertyPath: m_Drag
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 91428322, guid: eae0ec1126a4f174c93e2ddbc8e66fd2, type: 3}
-      propertyPath: m_Radius
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 91428325, guid: eae0ec1126a4f174c93e2ddbc8e66fd2, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 91428326}
+    - target: {fileID: 91428325, guid: eae0ec1126a4f174c93e2ddbc8e66fd2, type: 3}
+      propertyPath: OnDeath.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: InitiateDeath
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eae0ec1126a4f174c93e2ddbc8e66fd2, type: 3}
@@ -416,6 +400,30 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 91428320}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &91428322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91428321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5d2b7f4fa4fba146bc8996c7bc7672c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &91428326 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 91428324, guid: eae0ec1126a4f174c93e2ddbc8e66fd2,
+    type: 3}
+  m_PrefabInstance: {fileID: 91428320}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91428321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e998ffc233e17438c47d9f09d4d9a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &424293433
 PrefabInstance:
   m_ObjectHideFlags: 0
