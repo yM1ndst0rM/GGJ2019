@@ -16,10 +16,8 @@ public class CameraController : MonoBehaviour
         offset = camTransform.position - target.transform.position;
     }
 
-    void LateUpdate()
+    void FixedUpdate()
     {
-
-        //transform.LookAt(target.transform);
         if (target != null)
         {
             camTransform.position = Vector3.Lerp(camTransform.position, target.transform.position + offset, 0.05f);
