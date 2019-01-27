@@ -808,7 +808,7 @@ GameObject:
   - component: {fileID: 147617997389569097}
   - component: {fileID: 7672662354678112934}
   m_Layer: 9
-  m_Name: Main Character
+  m_Name: Main Character old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -915,7 +915,7 @@ MonoBehaviour:
   StartLifeForce: 10
   LifeForceDepletionPerSecond: -1
   LifeForceRestorationPerSecond: 1
-  LifeForce: 0
+  LifeForce: 10
   IsRestoringLifeForce: 0
   OnDeath:
     m_PersistentCalls:
@@ -934,6 +934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5e998ffc233e17438c47d9f09d4d9a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSystem: {fileID: 0}
 --- !u!1 &1640372073
 GameObject:
   m_ObjectHideFlags: 0

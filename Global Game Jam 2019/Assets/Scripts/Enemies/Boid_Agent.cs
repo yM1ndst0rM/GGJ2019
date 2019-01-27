@@ -128,17 +128,20 @@ public class Boid_Agent : MonoBehaviour
         avoidance = aggregatedAvoidance;
         cohesion  = aggregatedCohesion * 1f/Mathf.Max(1f,neighbourCount);
 
-        Vector3 towardPlayer = lfc.transform.position - transform.position;
-        float distance = Vector3.Magnitude(towardPlayer);
-        if (distance < lfc.LifeForce)
+        if (lfc != null)
         {
-            runningAway = true;
-            runaway    += -towardPlayer * Mathf.Pow((1f / distance), 1);
-        }
-        else
-        {
-            runningAway = false;
-            chase      += towardPlayer;
+            Vector3 towardPlayer = lfc.transform.position - transform.position;
+            float distance = Vector3.Magnitude(towardPlayer);
+            if (distance < lfc.LifeForce)
+            {
+                runningAway = true;
+                runaway += -towardPlayer * Mathf.Pow((1f / distance), 1);
+            }
+            else
+            {
+                runningAway = false;
+                chase += towardPlayer;
+            }
         }
     }
     
@@ -184,11 +187,15 @@ public class Boid_Agent : MonoBehaviour
     {
         float dmgRadius = 0.05f;
 
-        float distance   = Vector3.Magnitude(lfc.transform.position - transform.position);
-        if ((distance - dmgRadius) < lfc.LifeForce)
+        if (lfc != null)
         {
-            float damage = dps * Time.deltaTime;
-            lfc.LifeForce = Mathf.Max(lfc.LifeForce - damage, 0f);
+
+            float distance = Vector3.Magnitude(lfc.transform.position - transform.position);
+            if ((distance - dmgRadius) < lfc.LifeForce)
+            {
+                float damage = dps * Time.deltaTime;
+                lfc.LifeForce = Mathf.Max(lfc.LifeForce - damage, 0f);
+            }
         }
     }
 

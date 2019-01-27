@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterController : MonoBehaviour
 {
     
     public GameController.InputType inputType;
 
-
+    public UnityEvent OnDeath;
     public float speed;
     float distToGround;
     Rigidbody playerRigidbody;
@@ -59,6 +60,16 @@ public class CharacterController : MonoBehaviour
 
     }
 
+    void OnCollisionEnter(Collision c)
+    {
+        Boid_Agent ba = c.gameObject.GetComponent<Boid_Agent>();
+        if(ba != null)
+        {
+            Debug.Log("DEAD!");
+            OnDeath.Invoke();
+        }
+            
+    }
 
 
     void Move()

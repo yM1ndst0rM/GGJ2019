@@ -20,13 +20,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AudioScene.unity
     guid: f903c00f2143ac849a716f53aefd3adb
-  - enabled: 1
-    path: Assets/Scenes/CrowdSystem.unity
-    guid: 3d271d2d602638140a9abbfa57238389
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/BIG FAT GAME SCENE.unity
     guid: 9696edc7c2d00a34f95c4f5473de3ac8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Character_Controller_Scene.unity
     guid: 181fc914585bf5041a294033c326455d
+  - enabled: 1
+    path: Assets/Scenes/CrowdSystem.unity
+    guid: b2beb111ab68b6f45ad374f2153bcaa6
   m_configObjects: {}

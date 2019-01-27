@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8182018059958738939}
   - component: {fileID: 4279784181764761126}
   - component: {fileID: 3351535047017520498}
+  - component: {fileID: 8395704637764443783}
   m_Layer: 0
   m_Name: Box007
   m_TagString: Untagged
@@ -81,6 +82,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8395704637764443783
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2804224099285421605}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.1516333, y: 6.085529, z: 0.04118785}
+  m_Center: {x: -0.52988243, y: -0.4968574, z: 0.12468854}
 --- !u!1 &8332883459880895659
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6444800417836223662}
   m_Layer: 0
-  m_Name: City_Blocks_01
+  m_Name: City_Blocks_Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
