@@ -2,18 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEditor;
 
 public class MenuController : MonoBehaviour
 {
 
-    public void LoadScene(SceneAsset scene)
+    public void LoadScene(string scene)
     {
-        SceneManager.LoadScene(scene.name);
+        SceneManager.LoadScene(scene);
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void LoadSceneWithDelaay()
+    {
+        Invoke("LoadScene", 10f);
+    }
+
+    void LoadScene()
+    {
+        SceneManager.LoadScene(8);
     }
 }

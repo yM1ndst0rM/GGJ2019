@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneController: MonoBehaviour
 {
-    public SceneAsset[] MainScenes;
+    public string[] MainScenes;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +19,7 @@ public class SceneController: MonoBehaviour
         foreach (var s in MainScenes)
         {
             
-            var asyncLoad = SceneManager.LoadSceneAsync(s.name, LoadSceneMode.Additive);
+            var asyncLoad = SceneManager.LoadSceneAsync(s, LoadSceneMode.Additive);
             while (!asyncLoad.isDone)
             {
                 yield return null;

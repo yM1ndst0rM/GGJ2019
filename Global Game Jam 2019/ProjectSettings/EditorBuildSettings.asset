@@ -33,6 +33,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Character_Controller_Scene.unity
     guid: 181fc914585bf5041a294033c326455d
   - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/b2beb111ab68b6f45ad374f2153bcaa6
+    path: 
     guid: b2beb111ab68b6f45ad374f2153bcaa6
+  - enabled: 1
+    path: Assets/Scenes/LostScene.unity
+    guid: 14e303283d1772842bbf4d9e0c6e7059
   m_configObjects: {}
