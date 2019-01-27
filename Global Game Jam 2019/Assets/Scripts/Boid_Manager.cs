@@ -13,7 +13,7 @@ public class Boid_Manager : MonoBehaviour
     private List<BoxCollider> spawnAreas = new List<BoxCollider>();
 
 
-    Bounds computeWorldBB()
+    void computeWorldBB()
     {
         Vector3 minExtents = new Vector3(Mathf.Infinity, Mathf.Infinity, Mathf.Infinity);
         Vector3 maxExtents = new Vector3(Mathf.NegativeInfinity, Mathf.NegativeInfinity, Mathf.NegativeInfinity);
@@ -40,9 +40,8 @@ public class Boid_Manager : MonoBehaviour
         Bounds result = new Bounds();
         result.SetMinMax(minExtents, maxExtents);
 
-        Debug.Log("WorldBB is: " + minExtents.ToString() + " , " + maxExtents.ToString());
+        worldBounds = result;
 
-        return result;
     }
 
     private void gatherSpawnAreas()
@@ -64,8 +63,9 @@ public class Boid_Manager : MonoBehaviour
 
     void Awake()
     {
-        worldBounds = computeWorldBB();
-        gatherSpawnAreas();
+        Invoke( "computeWorldBB" , 1);
+        Invoke("gatherSpawnAreas", 2);
+        Invoke("spawnBoids", 3);
 
         for (int i = 0; i < gridResolution; i++)
             for (int j = 0; j < gridResolution; j++)
@@ -74,8 +74,8 @@ public class Boid_Manager : MonoBehaviour
 
 
     void Start()
-    {
-        spawnBoids();
+    { 
+   
     }
 
     public Vector2Int sortBoidIntoGrid(Boid_Agent b)
@@ -113,7 +113,7 @@ public class Boid_Manager : MonoBehaviour
                                                      Random.Range(bc.bounds.min.y, bc.bounds.min.y),
                                                      Random.Range(bc.bounds.min.z, bc.bounds.max.z));
 
-                Instantiate(agentPrototype, randomPosition, Quaternion.identity);
+                Instantiate(agentPrototype, randomPosition, Quaternion.identity, bc.transform);
             }
         }
     }
