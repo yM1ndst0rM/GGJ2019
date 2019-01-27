@@ -3167,6 +3167,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41558438ab9132f4195d1d0c37377f61, type: 3}
+--- !u!1 &265212498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8677892515682873267, guid: 3f6c39014bffd1148b626fd35e9dd610,
+    type: 3}
+  m_PrefabInstance: {fileID: 1373006657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &265212500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265212498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a210afa0588f24eaa46ce639ac91b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Frequency: 0.5
 --- !u!1001 &284548811
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4493,6 +4512,44 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 360449315}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &360809037 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4401182249291334690, guid: c28018f0090b6e640b0001f7433bf637,
+    type: 3}
+  m_PrefabInstance: {fileID: 1120915020}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &360809038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360809037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be0430d409c62734ca9c181eb3c83518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HasReachedGoal: 0
+  ReachedGoal:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 569662021}
+        m_MethodName: LoadScene
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 102900000, guid: a37992ba7db83ea478c67dc8d0c7d981,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  GoalIndicator: {fileID: 1599103037}
+  GoalSpecialMaterial: {fileID: 2100000, guid: 85881aac022e02b4b8e1130f44fa624c, type: 2}
 --- !u!1001 &362868700
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15785,12 +15842,12 @@ PrefabInstance:
     - target: {fileID: 8677892515549390074, guid: 3f6c39014bffd1148b626fd35e9dd610,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 131.7
+      value: 113.2
       objectReference: {fileID: 0}
     - target: {fileID: 8677892515549390074, guid: 3f6c39014bffd1148b626fd35e9dd610,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 196.2
+      value: 98.3
       objectReference: {fileID: 0}
     - target: {fileID: 8677892515549390074, guid: 3f6c39014bffd1148b626fd35e9dd610,
         type: 3}
@@ -15832,7 +15889,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8677892515682873269, guid: 3f6c39014bffd1148b626fd35e9dd610,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 94.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677892515682873266, guid: 3f6c39014bffd1148b626fd35e9dd610,
+        type: 3}
+      propertyPath: m_Range
+      value: 413.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677892515682873266, guid: 3f6c39014bffd1148b626fd35e9dd610,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677892515682873266, guid: 3f6c39014bffd1148b626fd35e9dd610,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8481090032282779283, guid: 3f6c39014bffd1148b626fd35e9dd610, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f6c39014bffd1148b626fd35e9dd610, type: 3}
 --- !u!1001 &1373486780
 PrefabInstance:
@@ -20362,44 +20440,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1668992238}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1677970977 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1221081788121425451, guid: 1aef495f03d685446b1095bb55a923d6,
-    type: 3}
-  m_PrefabInstance: {fileID: 1376682873}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1677970982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1677970977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be0430d409c62734ca9c181eb3c83518, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HasReachedGoal: 0
-  ReachedGoal:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 569662021}
-        m_MethodName: LoadScene
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 102900000, guid: a37992ba7db83ea478c67dc8d0c7d981,
-            type: 3}
-          m_ObjectArgumentAssemblyTypeName: UnityEditor.SceneAsset, UnityEditor
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  GoalIndicator: {fileID: 0}
-  GoalSpecialMaterial: {fileID: 2100000, guid: 85881aac022e02b4b8e1130f44fa624c, type: 2}
 --- !u!1001 &1686197043
 PrefabInstance:
   m_ObjectHideFlags: 0
