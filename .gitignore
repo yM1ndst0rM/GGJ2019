@@ -37,6 +37,7 @@ sysinfo.txt
 
 # FMOD
 **fmod_editor.log
+**/.cache/*
 
 # JetBrains
 .idea/**

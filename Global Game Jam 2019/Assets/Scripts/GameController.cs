@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     public enum InputType { mouse, controller };
-    InputType inputType = InputType.mouse;
+    InputType inputType = InputType.controller;
     string controlls = "";
 
     private void Awake()
