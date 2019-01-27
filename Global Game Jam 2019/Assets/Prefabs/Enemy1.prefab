@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e479f04db65d304428c57fce0740e6e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  avoidanceWeight: 4
+  avoidanceWeight: 2
   cohesionWeight: 1
   alignmentWeight: 1
   chaseWeight: 5
@@ -191,7 +191,8 @@ MonoBehaviour:
   lfc: {fileID: 0}
   dps: 0.005
   rotationSpeed: 60
-  runningAway: 0
+  gridInfluence: 3
+  updateDelay: 3
 --- !u!1 &447907583
 GameObject:
   m_ObjectHideFlags: 0
