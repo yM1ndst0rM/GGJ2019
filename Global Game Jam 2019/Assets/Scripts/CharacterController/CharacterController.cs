@@ -22,9 +22,12 @@ public class CharacterController : MonoBehaviour
     float moveVertical;
     float rotateHorizontal;
     float rotateVertical;
+    
 
     GameController gameController;
-    
+    Vector3 playerDirection;
+    Vector3 mouseDirection;
+
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +42,7 @@ public class CharacterController : MonoBehaviour
     void Update()
     {
         strafing = Input.GetButton("Aiming");
-
-    
+        Debug.Log(rotateVertical);
 
     }
 
@@ -50,6 +52,8 @@ public class CharacterController : MonoBehaviour
             Move();
 
         SetAnimation();
+       
+
     }
 
 
@@ -60,7 +64,7 @@ public class CharacterController : MonoBehaviour
         moveVertical = Input.GetAxis("Vertical");
         rotateHorizontal = Input.GetAxis("HorizontalRight");
         rotateVertical = Input.GetAxis("VerticalRight");
-
+        
         //camForward = Vector3.Scale(camera.forward, new Vector3(1, 0, 1)).normalized;
 
         moveMagnitude = Mathf.Clamp01(new Vector2(moveHorizontal, moveVertical).magnitude);       
@@ -79,8 +83,10 @@ public class CharacterController : MonoBehaviour
         }
         else
         {
-            Vector3 playerDirection = Vector3.right * moveHorizontal + Vector3.forward * moveVertical;
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(playerDirection, Vector3.up), 0.1f);
+            
+            playerDirection = Vector3.right * moveHorizontal + Vector3.forward * moveVertical;
+            if (playerDirection.sqrMagnitude > 0.0f)
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(playerDirection, Vector3.up), 0.1f);
         }
 
         Vector3 movement = Vector3.right * moveHorizontal + Vector3.forward * moveVertical;
@@ -92,7 +98,7 @@ public class CharacterController : MonoBehaviour
 
     void HandleControllerRotation()
     {
-        Vector3 playerDirection = Vector3.right * rotateHorizontal + Vector3.forward * rotateVertical;
+        playerDirection = Vector3.right * rotateHorizontal + Vector3.forward * rotateVertical;
         if (playerDirection.sqrMagnitude > 0.0f)
         {
             transform.Rotate(0, rotateVertical, 0);
@@ -103,7 +109,7 @@ public class CharacterController : MonoBehaviour
     void HandleMouseRotation()
     {
         Vector3 mousePos = new Vector3(0, 0, 0);
-        Vector3 mouseDirection;
+      
 
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -125,6 +131,6 @@ public class CharacterController : MonoBehaviour
 
     void SetAnimation()
     {
-        anim.SetFloat("Speed", moveMagnitude);
+        anim.SetFloat("Forward", moveMagnitude);
     }
 }
