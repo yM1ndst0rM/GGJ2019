@@ -67,9 +67,8 @@ public class CharacterController : MonoBehaviour
         moveVertical = Input.GetAxis("Vertical");
         rotateHorizontal = Input.GetAxis("HorizontalRight");
         rotateVertical = Input.GetAxis("VerticalRight");
-        
-        //camForward = Vector3.Scale(camera.forward, new Vector3(1, 0, 1)).normalized;
 
+        //camForward = Vector3.Scale(camera.forward, new Vector3(1, 0, 1)).normalized;
         moveMagnitude = Mathf.Clamp01(new Vector2(moveHorizontal, moveVertical).magnitude);       
       
 
@@ -84,9 +83,6 @@ public class CharacterController : MonoBehaviour
                     HandleMouseRotation();
                     break;
             }
-
-
-
         }
         else
         {
@@ -96,9 +92,10 @@ public class CharacterController : MonoBehaviour
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(playerDirection, Vector3.up), 0.1f);
         }
 
+        
         Vector3 movement = Vector3.right * moveHorizontal + Vector3.forward * moveVertical;
         Vector3 clampedMovement = Vector3.ClampMagnitude(movement, 1);
-        Vector3 moveVelocity = clampedMovement * speed;
+        Vector3 moveVelocity = new Vector3(clampedMovement.x * speed, playerRigidbody.velocity.y, clampedMovement.z * speed);
 
         playerRigidbody.velocity = moveVelocity;
     }
@@ -149,5 +146,10 @@ public class CharacterController : MonoBehaviour
 
         anim.SetFloat("Forward", animV);
         anim.SetFloat("Sidewards", animH);
+    }
+
+    bool IsGrounded()
+    {
+        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
     }
 }
