@@ -30,6 +30,11 @@ public class CharacterController : MonoBehaviour
     GameController gameController;
     Vector3 playerDirection;
     Vector3 mouseDirection;
+    AudioController audioController;
+
+    [FMODUnity.EventRef]
+    public string enemy = "";
+    FMOD.Studio.EventInstance enemyEv;
 
 
     // Start is called before the first frame update
@@ -38,7 +43,10 @@ public class CharacterController : MonoBehaviour
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
         gameController = FindObjectOfType<GameController>();
-        inputType = gameController.GetControlls();
+        inputType = gameController.GetControlls();   
+        enemyEv = FMODUnity.RuntimeManager.CreateInstance(enemy);
+        enemyEv.start();
+
     }
 
     // Update is called once per frame
@@ -50,6 +58,9 @@ public class CharacterController : MonoBehaviour
             Move();
 
         SetAnimation();
+
+        CheckEnemySound();
+       
 
     }
 
@@ -64,8 +75,7 @@ public class CharacterController : MonoBehaviour
     {
         Boid_Agent ba = c.gameObject.GetComponent<Boid_Agent>();
         if(ba != null)
-        {
-            Debug.Log("DEAD!");
+        {            
             OnDeath.Invoke();
         }
             
@@ -163,4 +173,55 @@ public class CharacterController : MonoBehaviour
     {
         return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
     }
+
+
+    List<Collider> triggerList = new List<Collider>();
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Enemy1(Clone)" && !triggerList.Contains(other)){
+            triggerList.Add(other);
+        }        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.name == "Enemy1(Clone)" && triggerList.Contains(other)){
+            triggerList.Remove(other);
+        }
+    }
+
+    void CheckEnemySound()
+    {   
+        if (triggerList.Count > 0)
+        {
+            float distance = Mathf.Infinity;
+
+            foreach(Collider enemy in triggerList)
+            {
+                float thisDistance = Vector3.Distance(enemy.transform.position, transform.position);
+
+                if (thisDistance < distance)
+                {
+                    distance = thisDistance;
+                }                
+            }
+
+            if(distance < 10)
+            {
+                float soundParam = (1 / distance) + 0.5f;
+                Debug.Log(soundParam);
+                enemyEv.setParameterValue("Crowd_Volume", soundParam);
+            } else
+            {
+                enemyEv.setParameterValue("Crowd_Volume", 0);
+            }
+        }
+    }
+
+    public void StopSound()
+    {
+        enemyEv.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
 }

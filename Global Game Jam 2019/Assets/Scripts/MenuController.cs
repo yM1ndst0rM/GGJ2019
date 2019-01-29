@@ -16,13 +16,14 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
-    public void LoadSceneWithDelaay()
+    public void LoadSceneWithDelay()
     {
-        Invoke("LoadScene", 10f);
+        Invoke("LoadGameOverScene", 7f);
     }
 
-    void LoadScene()
+    void LoadGameOverScene()
     {
         SceneManager.LoadScene(8);
+        GameObject.FindGameObjectWithTag("AudioController").GetComponent<AudioController>().Stop();
     }
 }

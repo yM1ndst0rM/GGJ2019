@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114496370084043318}
-  - {fileID: 114821995100279940}
+  - {fileID: 114519706329424836}
+  - {fileID: 114684016207619840}
   EditorEvents:
-  - {fileID: 114137572918431212}
-  - {fileID: 114527625290649876}
-  - {fileID: 114991979631012506}
-  - {fileID: 114947077429293762}
-  - {fileID: 114415438720277180}
-  - {fileID: 114502426290606814}
+  - {fileID: 114187979794316190}
+  - {fileID: 114973039942576386}
+  - {fileID: 114126604362081796}
+  - {fileID: 114671856698930894}
+  - {fileID: 114524942969721336}
+  - {fileID: 114933260360291222}
+  - {fileID: 114693222995663152}
   MasterBanks:
-  - {fileID: 114066451024276794}
-  - {fileID: 114821995100279940}
+  - {fileID: 114684016207619840}
   StringsBanks:
-  - {fileID: 114496370084043318}
-  stringsBankWriteTime: 636841411401029167
+  - {fileID: 114519706329424836}
+  stringsBankWriteTime: 636843851995462979
   cacheVersion: 3
 --- !u!114 &114015634209773392
 MonoBehaviour:
@@ -104,6 +104,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 500
+--- !u!114 &114126604362081796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Footsteps
+  guid: 899e979be3be944aa912b044f06d2c6f
+  Banks:
+  - {fileID: 114684016207619840}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 500
 --- !u!114 &114137572918431212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +166,29 @@ MonoBehaviour:
   Min: 0
   Max: 6
   Default: 0
+--- !u!114 &114187979794316190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Menu
+  guid: 1886516ea720a64686b714afac23abc1
+  Banks:
+  - {fileID: 114684016207619840}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 32000
 --- !u!114 &114188007408217714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +369,22 @@ MonoBehaviour:
   - Name: Desktop
     Value: 5002336
   Exists: 1
+--- !u!114 &114312867048110526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Theme
+  Min: 0
+  Max: 6
+  Default: 0
 --- !u!114 &114340041673947738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,6 +645,65 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 184107
+--- !u!114 &114506437862276182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Crowd_Volume
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114519706329424836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: Assets\FMOD\GGJ-2019\Build\Desktop\Master Bank.strings.bank
+  lastModified: 636843851995462979
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1002
+  Exists: 1
+--- !u!114 &114524942969721336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Main_Theme
+  guid: befb74c19ac1904fa0993f912b6a1cdf
+  Banks:
+  - {fileID: 114684016207619840}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114312867048110526}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 179669
 --- !u!114 &114527625290649876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,6 +814,73 @@ MonoBehaviour:
   Min: 0
   Max: 5
   Default: 0
+--- !u!114 &114671856698930894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Light_Charge
+  guid: b1c04f05097d9745869df18e9e721241
+  Banks:
+  - {fileID: 114684016207619840}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 12905
+--- !u!114 &114684016207619840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: D:\Projekte\Unity\GGJ2019\Global Game Jam 2019\Assets\FMOD\GGJ-2019\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636843851995343305
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 5634400
+  Exists: 1
+--- !u!114 &114693222995663152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Crowd_Near
+  guid: daf3f05fa6adcc408ec86f104391b1f0
+  Banks:
+  - {fileID: 114684016207619840}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114506437862276182}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 184107
 --- !u!114 &114705053318439364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -826,6 +1014,29 @@ MonoBehaviour:
   - Name: Desktop
     Value: 960
   Exists: 1
+--- !u!114 &114933260360291222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Death
+  guid: c52dc7d3e876194e98e7943cf7d06d18
+  Banks:
+  - {fileID: 114684016207619840}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4000
 --- !u!114 &114947077429293762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,6 +1061,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 136698
+--- !u!114 &114973039942576386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music_Select
+  guid: 4b840a82628d754cbc3bcc27b03a9e13
+  Banks:
+  - {fileID: 114684016207619840}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4000
 --- !u!114 &114984601009711394
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Spawn
   - LifeLight
+  - Fire
+  - Target
+  - AudioController
+  - PlayerCollector
   layers:
   - Default
   - TransparentFX
